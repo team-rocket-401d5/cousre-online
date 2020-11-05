@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const server = require('./lib/server');
 
 mongoose
-  .connect(process.env.MONGODB_URI || 'mongodb://localhost/auth', {
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost/course_app', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
