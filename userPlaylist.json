@@ -13,11 +13,11 @@
     "toral_duration":0,
     "watched_time":0
     ,
-    "videos":[
+    "sections":[
         
 {
-    "title":"defalt",
-    "items":[{
+    "section_title":"defalt",
+    "videos":[{
     "url_simple": "https://www.youtube.com/watch?v=-xKKo7t72Tg",
     "title": "Itro & Kontinuum - Alive [NCS Release]",
     "thumbnail": "https://i.ytimg.com/vi/-xKKo7t72Tg/hqdefault.jpg",
