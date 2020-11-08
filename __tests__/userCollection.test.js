@@ -2,8 +2,8 @@
 
 const server = require('../lib/server.js');
 const supertest = require('supertest');
-const mockRequest = supertest(server);
-const supergoose = require('@code-fellows/supergoose');
+supertest(server);
+require('@code-fellows/supergoose');
 const users = require('../lib/models/collections/userCollection.js');
 describe(' user  Model', () => {
   it('can generateToken() and  authenticateJWT a  user  ', async () => {
@@ -45,7 +45,7 @@ describe(' user  Model', () => {
       password: '123',
     };
 
-    const record = await users.save(obj);
+    await users.save(obj);
     const record2 = await users.authenticateBasic('bayan4', '123');
 
     expect(record2.username).toEqual('bayan4');
@@ -60,7 +60,7 @@ describe(' user  Model', () => {
   
     };
 
-    const record = await users.save(obj);
+    await users.save(obj);
 
     const record3 = await users.list();
 
