@@ -1,0 +1,36 @@
+{
+  "name": "cousre-online",
+  "version": "1.0.0",
+  "description": "## Members",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-rocket-401d5/cousre-online.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/team-rocket-401d5/cousre-online/issues"
+  },
+  "homepage": "https://github.com/team-rocket-401d5/cousre-online#readme",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.13",
+    "superagent": "^6.1.0",
+    "ytpl": "^1.0.1"
+  }
+}
