@@ -95,3 +95,15 @@ function onStateChange(event) {
     socket.emit('play');
   }
 }
+
+$('form').submit((e)=>{
+  // e.preventDefault();
+  $('#chat').append($('#mess').val())
+
+  socket.emit('chat message',$('#mess').val());
+  $('#mess').val('');
+  return false;
+})
+socket.on('hi',(msg)=>{
+  $('#chat').append($('<p>').text(`${msg.msg}`))
+})
