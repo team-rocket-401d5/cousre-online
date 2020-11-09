@@ -37,7 +37,7 @@
   },
   "jest": {
     "testPathIgnorePatterns" : [
-      "/home/dina/401proj/cousre-online/__tests__/testvideo.js" 
+      "./__tests__/testvideo.js" 
     ]
   },
   "devDependencies": {
