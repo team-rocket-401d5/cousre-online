@@ -1,36 +1,32 @@
 'use strict';
 const { server } = require('../lib/server.js');
 const test2 = require('./testvideo.js');
-
 const supertest = require('supertest');
-
 const mockRequest = supertest(server);
 require('@code-fellows/supergoose');
 
 describe('api server courses', () => {
-  it('POST to /signup to create a new user', async () => {
+  it('Creates a new user', async () => {
     jest.setTimeout(50000);
     let res1 = await mockRequest
       .post('/signup')
       .send({ username: 'bayan', password: '123' });
-
     const response = res1.body.token;
-
     expect(res1.status).toBe(201);
     expect(res1.body.token).toEqual(response);
   });
+
   it('POST to /signin to create a new user', async () => {
     jest.setTimeout(500000);
     let res1 = await mockRequest
       .post('/signup')
       .send({ username: 'bayan1', password: '123' });
     let res2 = await mockRequest.post('/signin').auth('bayan1', '123');
-
     const response = res1.body.token;
-
     expect(res1.status).toBe(201);
     expect(res2.body.token).toEqual(response);
   });
+
   it('get to /secret to login as a user (use baerer auth)', async () => {
     jest.setTimeout(500000);
     let res1 = await mockRequest
@@ -40,15 +36,12 @@ describe('api server courses', () => {
     let res3 = await mockRequest
       .get('/secret')
       .set('authorization', `bearer ${res2.body.token}`);
-
-    // const response =res1.body.token
-
     expect(res1.status).toBe(201);
     expect(res3.text).toEqual('it\'s working');
   });
+
   it('should respond for post', async () => {
     jest.setTimeout(50000);
-
     await mockRequest
       .post('/signup')
       .send({ username: 'bayan3', password: '123' });
@@ -70,7 +63,6 @@ describe('api server courses', () => {
       .post(`/user/bayan3/courses/${res4.body._id}`)
       .send(test2)
       .set('authorization', `bearer ${res2.body.token}`);
-
     let res7 = await mockRequest
       .put(`/user/bayan3/courses/${res4.body._id}`)
       .send({
@@ -145,7 +137,6 @@ describe('api server courses', () => {
     let res11 = await mockRequest
       .patch(`/user/bayan3/courses/${res4.body._id}/bayan/isWatched`)
       .set('authorization', `bearer ${res2.body.token}`);
-    console.log('vvv', res11.body.sections[0].videos[0].isWatched);
     let res12 = await mockRequest
       .patch(`/user/bayan3/courses/${res4.body._id}/bayan/notes`)
       .set('authorization', `bearer ${res2.body.token}`)
@@ -157,13 +148,10 @@ describe('api server courses', () => {
     let res15 = await mockRequest.get(`/public`);
     let res16 = await mockRequest.get(`/public/${res15.body[0]._id}`);
     let res18 = await mockRequest.get(`/public/kxlk`);
-
     let res19 = await mockRequest.get('/playlist').send({
       playlist:
         'https://www.youtube.com/playlist?list=PLDoPjvoNmBAyXCAQMLhDRZsLi_HurqTBZ',
     });
-
-    console.log('vvv18', res19.body);
 
     let res8 = await mockRequest
       .delete(`/user/bayan3/courses/${res13.body._id}`)
@@ -172,7 +160,6 @@ describe('api server courses', () => {
     let res9 = await mockRequest
       .get(`/user/bayan3/courses`)
       .set('authorization', `bearer ${res2.body.token}`);
-
     expect(res5.status).toBe(302);
     expect(res4.status).toBe(302);
     expect(res6.status).toBe(302);
@@ -186,11 +173,9 @@ describe('api server courses', () => {
     expect(res18.status).toBe(404);
     expect(res19.status).toBe(200);
 
-    // expect(res8.status).toBe(202);
 
     expect(res4.body._id).toEqual(res5.body[0]._id);
-    expect(res6.body[0].section_title).toEqual(
-      res4.body.sections[0].section_title);
+    expect(res6.body[0].section_title).toEqual(res4.body.sections[0].section_title);
     expect(res7.body.sections[0].videos.length).toEqual(2);
     expect(res10.body.video_id).toEqual('bayan');
     expect(res13.body).not.toEqual(null);

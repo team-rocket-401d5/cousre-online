@@ -35,6 +35,11 @@
     "superagent": "^6.1.0",
     "ytpl": "^1.0.1"
   },
+  "jest": {
+    "testPathIgnorePatterns" : [
+      "/home/dina/401proj/cousre-online/__tests__/testvideo.js" 
+    ]
+  },
   "devDependencies": {
     "@code-fellows/supergoose": "^1.0.11",
     "eslint": "^7.13.0",
