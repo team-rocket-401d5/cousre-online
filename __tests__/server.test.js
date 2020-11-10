@@ -7,7 +7,7 @@ require('@code-fellows/supergoose');
 
 describe('api server courses', () => {
   it('Creates a new user', async () => {
-    // jest.setTimeout(50000);
+    jest.setTimeout(50000);
     let res1 = await mockRequest
       .post('/signup')
       .send({ username: 'bayan', password: '123' });
@@ -17,7 +17,7 @@ describe('api server courses', () => {
   });
 
   it('POST to /signin to create a new user', async () => {
-    // jest.setTimeout(500000);
+    jest.setTimeout(500000);
     let res1 = await mockRequest
       .post('/signup')
       .send({ username: 'bayan1', password: '123' });
@@ -28,7 +28,7 @@ describe('api server courses', () => {
   });
 
   it('get to /secret to login as a user (use baerer auth)', async () => {
-    // jest.setTimeout(500000);
+    jest.setTimeout(500000);
     let res1 = await mockRequest
       .post('/signup')
       .send({ username: 'bayan2', password: '123' });
@@ -41,7 +41,7 @@ describe('api server courses', () => {
   });
 
   it('should respond for post', async () => {
-    // jest.setTimeout(50000);
+    jest.setTimeout(50000);
     await mockRequest
       .post('/signup')
       .send({ username: 'bayan3', password: '123' });
