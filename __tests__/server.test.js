@@ -5,7 +5,7 @@ const supertest = require('supertest');
 const mockRequest = supertest(server);
 require('@code-fellows/supergoose');
 
-describe('api server courses', () => {
+describe('api server courses', async () => {
   it('Creates a new user', async () => {
     jest.setTimeout(50000);
     let res1 = await mockRequest
@@ -42,9 +42,11 @@ describe('api server courses', () => {
 
   it('should respond for post', async () => {
     jest.setTimeout(50000);
+    // set up to  the user enter
     await mockRequest
       .post('/signup')
       .send({ username: 'bayan3', password: '123' });
+
     let res2 = await mockRequest.post('/signin').auth('bayan3', '123');
     await mockRequest
       .get('/secret')
@@ -158,6 +160,13 @@ describe('api server courses', () => {
     let res9 = await mockRequest
       .get(`/user/bayan3/courses`)
       .set('authorization', `bearer ${res2.body.token}`);
+
+    let res20 = await mockRequest.get('/party/createParty');
+    let res21 = await mockRequest.get('/party');
+    let res22 = await mockRequest.get('/');
+
+    console.log(res22.status);
+
     expect(res5.status).toBe(302);
     expect(res4.status).toBe(302);
     expect(res6.status).toBe(302);
@@ -170,10 +179,14 @@ describe('api server courses', () => {
     expect(res8.status).toBe(202);
     expect(res18.status).toBe(404);
     expect(res19.status).toBe(200);
-
+    expect(res20.status).toBe(302);
+    expect(res21.status).toBe(200);
+    expect(res22.status).toBe(200);
 
     expect(res4.body._id).toEqual(res5.body[0]._id);
-    expect(res6.body[0].section_title).toEqual(res4.body.sections[0].section_title);
+    expect(res6.body[0].section_title).toEqual(
+      res4.body.sections[0].section_title,
+    );
     expect(res7.body.sections[0].videos.length).toEqual(2);
     expect(res10.body.video_id).toEqual('bayan');
     expect(res13.body).not.toEqual(null);
