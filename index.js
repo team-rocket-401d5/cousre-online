@@ -4,7 +4,7 @@ const server = require('./lib/server');
 
 
 mongoose
-  .connect(process.env.MONGODB_URI , {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
