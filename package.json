@@ -37,8 +37,7 @@
     "socket.io": "^3.0.1",
     "superagent": "^6.1.0",
     "uniqid": "^5.2.0",
-    "url-params-parser": "^1.0.3",
-    "ytpl": "^1.0.1"
+    "url-params-parser": "^1.0.3"
   },
   "jest": {
     "testPathIgnorePatterns": [
