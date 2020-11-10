@@ -152,7 +152,7 @@ describe('api server courses', () => {
       playlist:
         'https://www.youtube.com/playlist?list=PLDoPjvoNmBAyXCAQMLhDRZsLi_HurqTBZ',
     });
-
+    console.log(res19);
     let res8 = await mockRequest
       .delete(`/user/bayan3/courses/${res13.body._id}`)
       .set('authorization', `bearer ${res2.body.token}`);
