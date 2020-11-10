@@ -7,7 +7,7 @@ require('@code-fellows/supergoose');
 
 describe('api server courses', () => {
   it('Creates a new user', async () => {
-    jest.setTimeout(50000);
+    // jest.setTimeout(50000);
     let res1 = await mockRequest
       .post('/signup')
       .send({ username: 'bayan', password: '123' });
@@ -17,7 +17,7 @@ describe('api server courses', () => {
   });
 
   it('POST to /signin to create a new user', async () => {
-    jest.setTimeout(500000);
+    // jest.setTimeout(500000);
     let res1 = await mockRequest
       .post('/signup')
       .send({ username: 'bayan1', password: '123' });
@@ -28,7 +28,7 @@ describe('api server courses', () => {
   });
 
   it('get to /secret to login as a user (use baerer auth)', async () => {
-    jest.setTimeout(500000);
+    // jest.setTimeout(500000);
     let res1 = await mockRequest
       .post('/signup')
       .send({ username: 'bayan2', password: '123' });
@@ -41,7 +41,7 @@ describe('api server courses', () => {
   });
 
   it('should respond for post', async () => {
-    jest.setTimeout(50000);
+    // jest.setTimeout(50000);
     await mockRequest
       .post('/signup')
       .send({ username: 'bayan3', password: '123' });
@@ -152,39 +152,37 @@ describe('api server courses', () => {
       playlist:
         'https://www.youtube.com/playlist?list=PLDoPjvoNmBAyXCAQMLhDRZsLi_HurqTBZ',
     });
-    console.log(res19);
     let res8 = await mockRequest
       .delete(`/user/bayan3/courses/${res13.body._id}`)
       .set('authorization', `bearer ${res2.body.token}`);
-      console.log(res12,res11);
     let res9 = await mockRequest
       .get(`/user/bayan3/courses`)
       .set('authorization', `bearer ${res2.body.token}`);
     expect(res5.status).toBe(302);
-    // expect(res4.status).toBe(302);
-    // expect(res6.status).toBe(302);
-    // expect(res11.status).toBe(200);
-    // expect(res12.status).toBe(200);
-    // expect(res13.status).toBe(302);
-    // expect(res14.status).toBe(202);
-    // expect(res15.status).toBe(200);
-    // expect(res16.status).toBe(202);
-    // expect(res8.status).toBe(202);
-    // expect(res18.status).toBe(404);
-    // expect(res19.status).toBe(200);
+    expect(res4.status).toBe(302);
+    expect(res6.status).toBe(302);
+    expect(res11.status).toBe(200);
+    expect(res12.status).toBe(200);
+    expect(res13.status).toBe(302);
+    expect(res14.status).toBe(202);
+    expect(res15.status).toBe(200);
+    expect(res16.status).toBe(202);
+    expect(res8.status).toBe(202);
+    expect(res18.status).toBe(404);
+    expect(res19.status).toBe(200);
 
 
-    // expect(res4.body._id).toEqual(res5.body[0]._id);
-    // expect(res6.body[0].section_title).toEqual(res4.body.sections[0].section_title);
-    // expect(res7.body.sections[0].videos.length).toEqual(2);
-    // expect(res10.body.video_id).toEqual('bayan');
-    // expect(res13.body).not.toEqual(null);
+    expect(res4.body._id).toEqual(res5.body[0]._id);
+    expect(res6.body[0].section_title).toEqual(res4.body.sections[0].section_title);
+    expect(res7.body.sections[0].videos.length).toEqual(2);
+    expect(res10.body.video_id).toEqual('bayan');
+    expect(res13.body).not.toEqual(null);
 
-    // expect(res11.body.sections[0].videos[0].isWatched).toEqual(true);
-    // expect(res12.body.sections[0].videos[0].note).toEqual('course');
-    // expect(res15.body[0].publisher).toEqual('bayan3');
-    // expect(res16.body._id).toEqual(`${res15.body[0]._id}`);
+    expect(res11.body.sections[0].videos[0].isWatched).toEqual(true);
+    expect(res12.body.sections[0].videos[0].note).toEqual('course');
+    expect(res15.body[0].publisher).toEqual('bayan3');
+    expect(res16.body._id).toEqual(`${res15.body[0]._id}`);
 
-    // expect(res9.body.length).toEqual(2);
+    expect(res9.body.length).toEqual(2);
   });
 });
