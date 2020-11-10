@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 'use strict';
 
 let socket = io();
@@ -98,12 +100,12 @@ function onStateChange(event) {
 
 $('form').submit((e)=>{
   // e.preventDefault();
-  $('#chat').append($('#mess').val())
+  $('#chat').append($('#mess').val());
 
   socket.emit('chat message',$('#mess').val());
   $('#mess').val('');
   return false;
-})
+});
 socket.on('hi',(msg)=>{
-  $('#chat').append($('<p>').text(`${msg.msg}`))
-})
+  $('#chat').append($('<p>').text(`${msg.msg}`));
+});
