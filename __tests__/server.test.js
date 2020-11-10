@@ -71,7 +71,7 @@ describe('api server courses', () => {
             'https://www.youtube.com/playlist?list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn',
           playlist_title: '💥 NCS: Indie Dance',
           description: 'All Indie Dance releases on NCS.',
-          total_items: 14,
+          thumbnail: 'https://i.ytimg.com/vi/YwP4NAZGskg/mqdefault.jpg',
         },
         author: {
           name: 'NoCopyrightSounds',
@@ -152,11 +152,9 @@ describe('api server courses', () => {
       playlist:
         'https://www.youtube.com/playlist?list=PLDoPjvoNmBAyXCAQMLhDRZsLi_HurqTBZ',
     });
-    console.log(res19);
     let res8 = await mockRequest
       .delete(`/user/bayan3/courses/${res13.body._id}`)
       .set('authorization', `bearer ${res2.body.token}`);
-
     let res9 = await mockRequest
       .get(`/user/bayan3/courses`)
       .set('authorization', `bearer ${res2.body.token}`);
