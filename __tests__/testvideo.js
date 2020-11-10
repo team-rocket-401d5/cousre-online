@@ -5,7 +5,7 @@ let test = {
       'https://www.youtube.com/playlist?list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn',
     playlist_title: '💥 NCS: Indie Dance',
     description: 'All Indie Dance releases on NCS.',
-    total_items: 14,
+    thumbnail: 'https://i.ytimg.com/vi/YwP4NAZGskg/mqdefault.jpg',
   },
   author: {
     name: 'NoCopyrightSounds',

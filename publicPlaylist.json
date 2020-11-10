@@ -4,7 +4,7 @@
         "url": "https://www.youtube.com/playlist?list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn",
         "playlist_title": "💥 NCS: Indie Dance",
         "description": "All Indie Dance releases on NCS.",
-        "total_items": 14
+        "thumbnail": "14"
     },
     "author":{
         "name": "NoCopyrightSounds",
@@ -64,5 +64,5 @@
 
 
 ],
-    "user_name": ""
+    "user": "dina"
 }
