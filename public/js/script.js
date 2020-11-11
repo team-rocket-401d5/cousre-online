@@ -99,8 +99,8 @@ function onStateChange(event) {
 }
 
 $('form').submit((e)=>{
-  // e.preventDefault();
-  $('#chat').append($('#mess').val());
+  e.preventDefault();
+  $('#chat').append($('<p>').text($('#mess').val()));
 
   socket.emit('chat message',$('#mess').val());
   $('#mess').val('');
