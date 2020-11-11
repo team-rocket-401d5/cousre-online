@@ -52,8 +52,8 @@ function onPlayerStateChange(event) {
 let actions = {
   stopVideo(time) {
     console.log('stop meeeee nowwwww or I will do something  bad for me and you.!');
-    player.pauseVideo();
     player.seekTo(time);
+    player.pauseVideo();
     // socket.emit('sync', player.getCurrentTime());
   },
   playVideo(time) {
@@ -98,14 +98,14 @@ function onStateChange(event) {
   }
 }
 
-$('form').submit((e)=>{
+$('form').submit(e => {
   e.preventDefault();
   $('#chat').append($('<p>').text($('#mess').val()));
 
-  socket.emit('chat message',$('#mess').val());
+  socket.emit('chat message', $('#mess').val());
   $('#mess').val('');
   return false;
 });
-socket.on('hi',(msg)=>{
+socket.on('hi', msg => {
   $('#chat').append($('<p>').text(`${msg.msg}`));
 });
