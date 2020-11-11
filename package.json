@@ -7,8 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "lint": "eslint '**/*.js'",
     "start": "node index.js",
+    "lint": "eslint '**/*.js'",
     "dev": "nodemon index.js",
     "test": "jest --coverage --verbose"
   },
