@@ -8,7 +8,11 @@
 
 ## Description
 
-An online web app for organizing courses and keeping track of person's learning progress
+Course-fellows is an organizing tool for self-paced online learners, that will help them manage their courses the way they like. It helps with keeping track of the learning progress for each course. The web app will enable a community of learners to share their thoughts on the courses they took, and connect them together through their learning journey.
+
+## Initial wireframe
+
+[wireframe](https://miro.com/app/board/o9J_lfE_Fpw=/)
 
 ## PM Board
 
@@ -18,6 +22,30 @@ An online web app for organizing courses and keeping track of person's learning 
 
 ![UML](./project.png)
 
-## EDR
+## ERD
 
-![EDR](./EDR.png)
+![ERD](./EDR.png)
+
+## Technologies
+
+Back-end /server-side 
+- Node.js 
+- Express.js 
+- MongoDB 
+- Socket.io
+
+## Libraries/dependencies:
+
+- moment: link
+- base-64
+- cors 
+- dotenv 
+- ejs 
+- googleapis 
+- jsonwebtoken
+- mongoose 
+- socket.io 
+- supertest
+- uniqid 
+- url-params-parser
+
