@@ -2,9 +2,9 @@
 
 ## Members
 
-- Bayan alalem
-- Dina Alsaid
-- Mohammad Eshtaiwi
+- Bayan alalem [GitHub](https://github.com/bayan-97)
+- Dina Alsaid [GitHub](https://github.com/dinaAlsaid)
+- Mohammad Eshtaiwi [GitHub](https://github.com/Mohammad-Eshtaiwi)
 
 ## Description
 
@@ -13,6 +13,46 @@ Course-fellows is an organizing tool for self-paced online learners, that will h
 ## Initial wireframe
 
 [wireframe](https://miro.com/app/board/o9J_lfE_Fpw=/)
+
+## Technologies
+
+Back-end /server-side:
+
+- Node.js
+- Express.js
+- MongoDB
+- Socket.io
+
+## Libraries/dependencies
+
+- moment: link
+- base-64
+- cors
+- dotenv
+- ejs
+- googleapis
+- jsonwebtoken
+- mongoose
+- socket.io
+- supertest
+- uniqid
+- url-params-parser
+
+## Endpoints
+
+`POST /signup`
+`POST /signin`
+`GET /oauth`
+`GET /playlist`
+`POST /user/:user/courses`
+`GET /user/:user/courses`
+`GET /user/:user/courses/:course`
+`POST /user/:user/courses/:course`
+`PUT /user/:user/courses/:course`
+`DELETE /user/:user/courses/:course`
+`GET /user/:user/courses/:course/:vidID`
+`PATCH /user/:user/courses/:course/:vidID/isWatched`
+`PATCH /user/:user/courses/:course/:vidID/notes`
 
 ## PM Board
 
@@ -24,28 +64,4 @@ Course-fellows is an organizing tool for self-paced online learners, that will h
 
 ## ERD
 
-![ERD](./EDR.png)
-
-## Technologies
-
-Back-end /server-side 
-- Node.js 
-- Express.js 
-- MongoDB 
-- Socket.io
-
-## Libraries/dependencies:
-
-- moment: link
-- base-64
-- cors 
-- dotenv 
-- ejs 
-- googleapis 
-- jsonwebtoken
-- mongoose 
-- socket.io 
-- supertest
-- uniqid 
-- url-params-parser
-
+![ERD](./Course-ER_Diagram.png)
