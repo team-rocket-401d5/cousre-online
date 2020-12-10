@@ -92,6 +92,6 @@ $('form').submit(e => {
   $('#mess').val('');
   return false;
 });
-socket.on('hi', msg => {
+socket.on('Msg', msg => {
   $('#chat').append($('<p>').text(`${msg.msg}`));
 });
