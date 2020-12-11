@@ -146,8 +146,8 @@ describe('api server courses', async () => {
       .get(`/user/bayan3/courses`)
       .set('authorization', `bearer ${res2.body.token}`);
 
-    let res20 = await mockRequest.get('/party/createParty');
-    let res21 = await mockRequest.get('/party');
+    // let res20 = await mockRequest.get('/party/createParty');
+    // let res21 = await mockRequest.get('/party');
     let res22 = await mockRequest.get('/');
 
     console.log(res22.status);
@@ -164,8 +164,8 @@ describe('api server courses', async () => {
     expect(res8.status).toBe(202);
     expect(res18.status).toBe(404);
     expect(res19.status).toBe(200);
-    expect(res20.status).toBe(302);
-    expect(res21.status).toBe(200);
+    // expect(res20.status).toBe(302);
+    // expect(res21.status).toBe(200);
     expect(res22.status).toBe(200);
 
     expect(res4.body._id).toEqual(res5.body[0]._id);
