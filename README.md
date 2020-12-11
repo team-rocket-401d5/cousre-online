@@ -1,14 +1,12 @@
-# cousre-Fellows
+# Course-fellows
 
-## Members
+This project is developed by team-rocket
+
+## Authors
 
 - Bayan alalem [GitHub](https://github.com/bayan-97)
 - Dina Alsaid [GitHub](https://github.com/dinaAlsaid)
 - Mohammad Eshtaiwi [GitHub](https://github.com/Mohammad-Eshtaiwi)
-
-## Description
-
-Course-fellows is an organizing tool for self-paced online learners, that will help them manage their courses the way they like. It helps with keeping track of the learning progress for each course. The web app will enable a community of learners to share their thoughts on the courses they took, and connect them together through their learning journey.
 
 ## Deployed app
 
@@ -58,11 +56,11 @@ Back-end /server-side:
 `PATCH /user/:user/courses/:course/:vidID/isWatched`  
 `PATCH /user/:user/courses/:course/:vidID/notes`  
 
-## PM Board
+## Overview
 
-[PM board](https://github.com/team-rocket-401d5/cousre-online/projects/1)
+Course-fellows is an organizing tool for self-paced online learners, that will help them manage their courses the way they like. It helps with keeping track of the learning progress for each course. The web app will enable a community of learners to share their thoughts on the courses they took, and connect them together through their learning journey.
 
-## UML
+## GitHub Repo
 
 initial: ![UML](./project.png)  
 final: ![UML](./proj.png)  

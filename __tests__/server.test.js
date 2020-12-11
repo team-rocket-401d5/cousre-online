@@ -8,9 +8,7 @@ require('@code-fellows/supergoose');
 describe('api server courses', async () => {
   it('Creates a new user', async () => {
     jest.setTimeout(50000);
-    let res1 = await mockRequest
-      .post('/signup')
-      .send({ username: 'bayan', password: '123' });
+    let res1 = await mockRequest.post('/signup').send({ username: 'bayan', password: '123' });
     const response = res1.body.token;
     expect(res1.status).toBe(201);
     expect(res1.body.token).toEqual(response);
@@ -18,9 +16,7 @@ describe('api server courses', async () => {
 
   it('POST to /signin to create a new user', async () => {
     jest.setTimeout(500000);
-    let res1 = await mockRequest
-      .post('/signup')
-      .send({ username: 'bayan1', password: '123' });
+    let res1 = await mockRequest.post('/signup').send({ username: 'bayan1', password: '123' });
     let res2 = await mockRequest.post('/signin').auth('bayan1', '123');
     const response = res1.body.token;
     expect(res1.status).toBe(201);
@@ -29,28 +25,20 @@ describe('api server courses', async () => {
 
   it('get to /secret to login as a user (use baerer auth)', async () => {
     jest.setTimeout(500000);
-    let res1 = await mockRequest
-      .post('/signup')
-      .send({ username: 'bayan2', password: '123' });
+    let res1 = await mockRequest.post('/signup').send({ username: 'bayan2', password: '123' });
     let res2 = await mockRequest.post('/signin').auth('bayan2', '123');
-    let res3 = await mockRequest
-      .get('/secret')
-      .set('authorization', `bearer ${res2.body.token}`);
+    let res3 = await mockRequest.get('/secret').set('authorization', `bearer ${res2.body.token}`);
     expect(res1.status).toBe(201);
-    expect(res3.text).toEqual('it\'s working');
+    expect(res3.text).toEqual(`it's working`);
   });
 
   it('should respond for post', async () => {
     jest.setTimeout(50000);
     // set up to  the user enter
-    await mockRequest
-      .post('/signup')
-      .send({ username: 'bayan3', password: '123' });
+    await mockRequest.post('/signup').send({ username: 'bayan3', password: '123' });
 
     let res2 = await mockRequest.post('/signin').auth('bayan3', '123');
-    await mockRequest
-      .get('/secret')
-      .set('authorization', `bearer ${res2.body.token}`);
+    await mockRequest.get('/secret').set('authorization', `bearer ${res2.body.token}`);
     let res4 = await mockRequest
       .post('/user/bayan3/course')
       .send(test2)
@@ -69,16 +57,14 @@ describe('api server courses', async () => {
       .put(`/user/bayan3/courses/${res4.body._id}`)
       .send({
         playlist: {
-          url:
-            'https://www.youtube.com/playlist?list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn',
+          url: 'https://www.youtube.com/playlist?list=PLRBp0Fe2GpglkzuspoGv-mu7B2ce9_0Fn',
           playlist_title: '💥 NCS: Indie Dance',
           description: 'All Indie Dance releases on NCS.',
           thumbnail: 'https://i.ytimg.com/vi/YwP4NAZGskg/mqdefault.jpg',
         },
         author: {
           name: 'NoCopyrightSounds',
-          channel_url:
-            'https://www.youtube.com/channel/UC_aEa8K-EOJ3D6gOs7HcyNg',
+          channel_url: 'https://www.youtube.com/channel/UC_aEa8K-EOJ3D6gOs7HcyNg',
         },
         watched_time: 0,
         sections: [
@@ -151,8 +137,7 @@ describe('api server courses', async () => {
     let res16 = await mockRequest.get(`/public/${res15.body[0]._id}`);
     let res18 = await mockRequest.get(`/public/kxlk`);
     let res19 = await mockRequest.get('/playlist').send({
-      playlist:
-        'https://www.youtube.com/playlist?list=PLDoPjvoNmBAyXCAQMLhDRZsLi_HurqTBZ',
+      playlist: 'https://www.youtube.com/playlist?list=PLDoPjvoNmBAyXCAQMLhDRZsLi_HurqTBZ',
     });
     let res8 = await mockRequest
       .delete(`/user/bayan3/courses/${res13.body._id}`)
@@ -161,8 +146,8 @@ describe('api server courses', async () => {
       .get(`/user/bayan3/courses`)
       .set('authorization', `bearer ${res2.body.token}`);
 
-    let res20 = await mockRequest.get('/party/createParty');
-    let res21 = await mockRequest.get('/party');
+    // let res20 = await mockRequest.get('/party/createParty');
+    // let res21 = await mockRequest.get('/party');
     let res22 = await mockRequest.get('/');
 
     console.log(res22.status);
@@ -179,14 +164,12 @@ describe('api server courses', async () => {
     expect(res8.status).toBe(202);
     expect(res18.status).toBe(404);
     expect(res19.status).toBe(200);
-    expect(res20.status).toBe(302);
-    expect(res21.status).toBe(200);
+    // expect(res20.status).toBe(302);
+    // expect(res21.status).toBe(200);
     expect(res22.status).toBe(200);
 
     expect(res4.body._id).toEqual(res5.body[0]._id);
-    expect(res6.body[0].section_title).toEqual(
-      res4.body.sections[0].section_title,
-    );
+    expect(res6.body[0].section_title).toEqual(res4.body.sections[0].section_title);
     expect(res7.body.sections[0].videos.length).toEqual(2);
     expect(res10.body.video_id).toEqual('bayan');
     expect(res13.body).not.toEqual(null);
