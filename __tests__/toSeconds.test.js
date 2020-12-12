@@ -1,4 +1,3 @@
-const moment = require('moment');
 
 const test2 = require('../lib/utilities.js/toSeconds.js');
 describe('api server', () => {
