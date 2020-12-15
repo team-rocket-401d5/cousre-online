@@ -1,4 +1,3 @@
-const moment = require('moment');
 
 const test3 = require('../lib/utilities.js/getDuration.js');
 describe('api server', () => {
